@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+      <tr>
+        {% comment %} <th scope="col">S.no</th>
+        <th scope="col">ID</th>
+        <th scope="col">Password</th>
+        <th scope="col">Email</th>
+        <th scope="col">Mobile</th> {% endcomment %}
+        <th scope="col">S.no</th>
+        <th scope="col">Latitude</th>
+        <th scope="col">longitude</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for ob in value %}
+      <tr>
+
+        {% comment %} <td>{{ob.id}}</td>
+        <td>{{ob.name}}</td>
+        <td>{{ob.password}}</td>
+        <td>{{ob.email}}</td>
+        <td>{{ob.mobile}}</td> {% endcomment %}
+        {% comment %} <td>{{ob.name}}</td> {% endcomment %}
+        <td>{{ob.name}}</td>
+        <td>{{ob.latitude}}</td>
+        <td>{{ob.longitude}}</td>
+        {% comment %} <td>{{ob.}}</td> {% endcomment %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>

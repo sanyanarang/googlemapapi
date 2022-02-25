@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Geolocation API</title>
+</head>
+<body>
+
+  <h1>Find your Current location</h1>
+  
+  <div class="container">
+  <form class="" method="POST" >
+      {% csrf_token %}
+      <div class="form-group">
+      <lable for= "name"> Username </lable>
+      <input name='name' type="text" id="name" class="form-control">
+      <br></br>
+
+      <lable for= "password"> Password </lable>
+      <input name='password' type="text" id="password" class="form-control">
+      <br></br>
+
+      <lable for= "email"> Email </lable>
+      <input name='email' type="text" id="email" class="form-control">
+      <br></br>
+
+      <lable for= "mobile"> Mobile Number </lable>
+      <input name='mobile' type="text" id="mobile" class="form-control">
+      <br></br>
+
+      <lable for= "id"> ID </lable>
+      <input name='id' type="text" id="id" class="form-control">
+      <br></br>
+      <lable for= "latitude"> Latitude </lable>
+      <input type="text" id="latitude" name="latitude" class="form-control">
+      <br></br>
+
+      <lable for= "longitude"> Longitude </lable>
+      <input type="text" id="longitude" name="longitude" class="form-control">
+      <br></br>
+
+      <button id="save" name="save" class="form-control" onclick="submit">know your friends location</button>
+      </div>
+    </form>
+</div>
+<button  onclick="getlocation()">click to know your location</button>
+      <div id="location"></div>
+<script>
+	var x= document.getElementById("location");
+    function getlocation() {
+    	if(navigator.geolocation){
+    		navigator.geolocation.getCurrentPosition(showPosition)
+    	  }
+    	else
+    	{
+             alert("Sorry! your browser is not supporting")
+         } }
+     
+     function showPosition(position){
+       var x = "Your current location is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " +    position.coords.longitude + ")";
+                document.getElementById("location").innerHTML = x;
+document.getElementById("latitude").value = position.coords.latitude;
+document.getElementById("longitude").value = position.coords.longitude;
+     }
+</script>
+</body>
+</html>
+
+ 
